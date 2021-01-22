@@ -1,0 +1,27 @@
+1) Donnez l’expression qui rend la liste des nombres positifs
+
+c:= #(1 2 3 -44 0 5 6 4 5 -3 22 1 2 5).
+c select: [:i | i > 0 ].
+
+> #(1 2 3 5 6 4 5 22 1 2 5)
+
+2) Donnez l’expression qui rend la liste des carrés des nombres
+
+c:= #(1 2 3 -44 0 5 6 4 5 -3 22 1 2 5).
+c collect: [:i | i * i ].
+
+> #(1 4 9 1936 0 25 36 16 25 9 484 1 4 25)
+
+3) Donnez l’expression qui rend la somme des nombres
+
+c:= #(1 2 3 -44 0 5 6 4 5 -3 22 1 2 5).
+c inject: 0 into: [:sum :i | sum + i].
+
+> 9
+
+4) Donnez l’expression qui rend le premier nombre négatif
+
+c:= #(1 2 3 -44 0 5 6 4 5 -3 22 1 2 5).
+c detect: [:i | i < 0].
+
+> -44
