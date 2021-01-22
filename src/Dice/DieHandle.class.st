@@ -13,6 +13,18 @@ DieHandle >> *Dice [
 ]
 
 { #category : #initialization }
+DieHandle >> + aDieHandle [
+	| handle |
+	handle := DieHandle new.
+	dices do: [ :i | handle addDie: i ].
+	aDieHandle getDice do: [ :i | handle addDie: i ].
+	
+	^ handle
+
+
+]
+
+{ #category : #initialization }
 DieHandle >> addDie: aDie [
 
 	dices add: aDie.
@@ -24,6 +36,14 @@ DieHandle >> addDie: aDie [
 DieHandle >> diceNumber [
 
 	^ dices size
+]
+
+{ #category : #initialization }
+DieHandle >> getDice [
+
+	^ dices
+
+	
 ]
 
 { #category : #initialization }
